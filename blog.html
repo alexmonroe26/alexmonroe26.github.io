@@ -57,6 +57,21 @@ Notes:
         $(this).prev().toggle();
         return false;
       });
+
+      var amountScrolled = 300;
+      $(window).scroll(function() {
+        if ($(window).scrollTop() > amountScrolled) {
+          $('a.back-to-top').fadeIn('slow');
+        } else {
+          $('a.back-to-top').fadeOut('slow');
+        }
+      });
+      $('a.back-to-top').click(function() {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 700);
+        return false;
+      });
     });
   </script>
 
@@ -70,6 +85,20 @@ Notes:
     .morelink {
       display: block;
       color: #19A2FB;
+    }
+
+    a.back-to-top {
+      display: none;
+      width: 60px;
+      height: 60px;
+      text-indent: -9999px;
+      position: fixed;
+      z-index: 999;
+      right: 20px;
+      bottom: 20px;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      border-radius: 30px;
     }
   </style>
 
@@ -100,8 +129,7 @@ Notes:
       <div class="blogpost w3-leftbar w3-panel">
         <h2>Alex is the best.</h2>
         <i>September 1, 2017</i>
-        <p><span class="more">Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great!
-        <br><span style="text-align:right;"><a href="">Back to Top ^</a></span></span>
+        <p><span class="more">Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great!</span>
         </p>
       </div>
       <div class="blogpost w3-leftbar w3-panel">
@@ -121,6 +149,8 @@ Notes:
       document.getElementById("sidebar").style.display = "none ";
     }
     var pageID = "blog_nav";
+
+    $('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
   </script>
 
 </body>
