@@ -16,12 +16,6 @@ Notes:
   <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
   <script>
     $(function() {
-      $("[data-include]").each(function() {
-        var that = $(this);
-        that.load(that.attr('data-include'), function() {
-          that.contents().unwrap();
-        });
-      });
       $("#" + pageID).addClass("w3-leftbar");
       // Configure/customize these variables.
       var showChar = 100; // How many characters are shown by default
@@ -55,21 +49,6 @@ Notes:
         }
         $(this).parent().prev().toggle();
         $(this).prev().toggle();
-        return false;
-      });
-
-      var amountScrolled = 300;
-      $(window).scroll(function() {
-        if ($(window).scrollTop() > amountScrolled) {
-          $('a.back-to-top').fadeIn('slow');
-        } else {
-          $('a.back-to-top').fadeOut('slow');
-        }
-      });
-      $('a.back-to-top').click(function() {
-        $('html, body').animate({
-          scrollTop: 0
-        }, 700);
         return false;
       });
     });
