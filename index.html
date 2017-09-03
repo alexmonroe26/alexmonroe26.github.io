@@ -24,7 +24,14 @@ Notes:
 </head>
 
 <body>
-  <div w3-include-html="nav.html"></div>
+  <div class="w3-sidebar w3-bar-block w3-collapse w3-border-right" style="width:200px;" id="sidebar">
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+    <a href="/"><img src="images/alex.png" alt="Logo" class="w3-bar-item" style="width: 120px; height: auto; display: block; margin: 10px auto;"></a>
+    <a href="/" class="w3-bar-item w3-button" id="home_nav">Home</a>
+    <a href="blog" class="w3-bar-item w3-button" id="blog_nav">Blog</a>
+    <a href="#" class="w3-bar-item w3-button" id="about_nav">About</a>
+    <a href="#" class="w3-bar-item w3-button" id="contact_nav">Contact</a>
+  </div>
   <div class="w3-main" style="margin-left: 200px;">
     <div class="w3-container w3-center">
       <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="display:block;">&#9776;</button>
@@ -50,9 +57,8 @@ Notes:
     function w3_close() {
       document.getElementById("sidebar").style.display = "none ";
     }
-    var pageID = "home_nav";
 
-    w3.includeHTML();
+    var pageID = "home_nav";
   </script>
 
 </body>
