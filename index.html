@@ -13,8 +13,10 @@ Notes:
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
   <script>
+    w3.includeHTML();
     $(function() {
       $("#" + pageID).addClass("w3-leftbar");
     });
@@ -23,14 +25,7 @@ Notes:
 </head>
 
 <body>
-  <div class="w3-sidebar w3-bar-block w3-collapse w3-border-right" style="width:200px;" id="sidebar">
-    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
-    <a href="/"><img src="images/alex.png" alt="Logo" class="w3-bar-item" style="width: 120px; height: auto; display: block; margin: 10px auto;"></a>
-    <a href="/" class="w3-bar-item w3-button" id="home_nav">Home</a>
-    <a href="blog" class="w3-bar-item w3-button" id="blog_nav">Blog</a>
-    <a href="#" class="w3-bar-item w3-button" id="about_nav">About</a>
-    <a href="#" class="w3-bar-item w3-button" id="contact_nav">Contact</a>
-  </div>
+  <div w3-include-html="nav.html"></div>
   <div class="w3-main" style="margin-left: 200px;">
     <div class="w3-container w3-center">
       <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="display:block;">&#9776;</button>
