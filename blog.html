@@ -1,0 +1,121 @@
+<!--
+Notes:
+- Gradient colors: #19A2FB and #C03DE8
+- Add ID of page to javascript at bottom
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Alex Gage | Blog</title>
+  <meta name="description" content="DESCRIPTION">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      $("#" + pageID).addClass("w3-leftbar");
+      // Configure/customize these variables.
+      var showChar = 100; // How many characters are shown by default
+      var ellipsestext = "...";
+      var moretext = "Read More...";
+      var lesstext = "Read Less";
+
+
+      $('.more').each(function() {
+        var content = $(this).html();
+
+        if (content.length > showChar) {
+
+          var c = content.substr(0, showChar);
+          var h = content.substr(showChar, content.length - showChar);
+
+          var html = c + '<span class="moreellipses">' + ellipsestext + '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+
+          $(this).html(html);
+        }
+
+      });
+
+      $(".morelink").click(function() {
+        if ($(this).hasClass("less")) {
+          $(this).removeClass("less");
+          $(this).html(moretext);
+        } else {
+          $(this).addClass("less");
+          $(this).html(lesstext);
+        }
+        $(this).parent().prev().toggle();
+        $(this).prev().toggle();
+        return false;
+      });
+    });
+  </script>
+
+  <!-- <script src="https://rawgit.com/showdownjs/showdown/develop/dist/showdown.min.js"></script> -->
+
+  <style>
+    .morecontent span {
+      display: none;
+    }
+
+    .morelink {
+      display: block;
+      color: #19A2FB;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="w3-sidebar w3-bar-block w3-collapse w3-border-right" style="width:200px;" id="sidebar">
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+    <a href="index.html"><img src="images/alex.png" alt="Logo" class="w3-bar-item" style="width: 120px; height: auto; display: block; margin: 10px auto;"></a>
+    <a href="index.html" class="w3-bar-item w3-button" id="home_nav">Home</a>
+    <a href="blog.html" class="w3-bar-item w3-button" id="blog_nav">Blog</a>
+    <a href="#" class="w3-bar-item w3-button" id="about_nav">About</a>
+    <a href="#" class="w3-bar-item w3-button" id="contact_nav">Contact</a>
+  </div>
+  <div class="w3-main" style="margin-left: 200px;">
+    <div class="w3-container" id="main-container">
+      <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="display:block;">&#9776;</button>
+      <br>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="width: 200px; height: 80px; display: block;">
+        <defs>
+          <lineargradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#19A2FB;stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-coloR:#C03DE8;stop-opacity:1"></stop>
+          </lineargradient>
+        </defs>
+        <text fill="url(#grad1)" font-size="70" font-family="Avenir Next" x="0" y="60" font-weight="bold">Blog</text>
+      </svg>
+      <div class="blogpost w3-leftbar w3-panel">
+        <h2>Alex is the best.</h2>
+        <i>September 1, 2017</i>
+        <p><span class="more">Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great! Alex is great!
+        </span></p>
+      </div>
+      <div class="blogpost w3-leftbar w3-panel">
+        <h2>Test Post 4</h2>
+        <i>August 29, 2017</i>
+        <p><span class="more">Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. <a href="" class="w3-text-blue">I am alex.</a> Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. Hello. I am alex. </span></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function w3_open() {
+      document.getElementById("sidebar").style.display = "block ";
+    }
+
+    function w3_close() {
+      document.getElementById("sidebar").style.display = "none ";
+    }
+    var pageID = "blog_nav";
+  </script>
+
+</body>
+
+</html>

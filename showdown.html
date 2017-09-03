@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TITLE</title>
+  <meta name="description" content="DESCRIPTION">
+  <link rel="stylesheet" href="PATH">
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+  <script src="https://rawgit.com/showdownjs/showdown/develop/dist/showdown.min.js"></script>
+
+</head>
+
+<body>
+  <div id="test"></div>
+  <script>
+    var converter = new showdown.Converter()
+    var text = '#hello, markdown!'
+    var html = converter.makeHtml(text);
+
+    $("#test").html(html);
+  </script>
+</body>
+
+</html>

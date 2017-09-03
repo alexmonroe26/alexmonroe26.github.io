@@ -1,0 +1,64 @@
+<!--
+Notes:
+- Gradient colors: #19A2FB and #C03DE8
+- Add ID of page to javascript at bottom
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Alex Gage</title>
+  <meta name="description" content="DESCRIPTION">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      $("#" + pageID).addClass("w3-leftbar");
+    });
+  </script>
+
+</head>
+
+<body>
+  <div class="w3-sidebar w3-bar-block w3-collapse w3-border-right" style="width:200px;" id="sidebar">
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+    <a href="index.html"><img src="images/alex.png" alt="Logo" class="w3-bar-item" style="width: 120px; height: auto; display: block; margin: 10px auto;"></a>
+    <a href="index.html" class="w3-bar-item w3-button" id="home_nav">Home</a>
+    <a href="blog.html" class="w3-bar-item w3-button" id="blog_nav">Blog</a>
+    <a href="#" class="w3-bar-item w3-button" id="about_nav">About</a>
+    <a href="#" class="w3-bar-item w3-button" id="contact_nav">Contact</a>
+  </div>
+  <div class="w3-main" style="margin-left: 200px;">
+    <div class="w3-container w3-center">
+      <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="display:block;">&#9776;</button>
+      <br>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="width: 300px; height: 80px;">
+        <defs>
+          <lineargradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#19A2FB;stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-coloR:#C03DE8;stop-opacity:1"></stop>
+          </lineargradient>
+        </defs>
+        <text fill="url(#grad1)" font-size="60" font-family="Avenir Next" x="0" y="60" font-weight="bold">Welcome!</text>
+      </svg>
+      <p>My name is Alex. I am great!</p>
+    </div>
+  </div>
+
+  <script>
+    function w3_open() {
+      document.getElementById("sidebar").style.display = "block ";
+    }
+
+    function w3_close() {
+      document.getElementById("sidebar").style.display = "none ";
+    }
+    var pageID = "home_nav";
+  </script>
+
+</body>
+
+</html>
