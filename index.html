@@ -16,7 +16,6 @@ Notes:
   <script src="https://www.w3schools.com/lib/w3.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
   <script>
-    w3.includeHTML();
     $(function() {
       $("#" + pageID).addClass("w3-leftbar");
     });
@@ -52,6 +51,8 @@ Notes:
       document.getElementById("sidebar").style.display = "none ";
     }
     var pageID = "home_nav";
+
+    w3.includeHTML();
   </script>
 
 </body>
